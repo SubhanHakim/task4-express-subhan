@@ -1,5 +1,5 @@
 const dbConfig = {
-  url: "mongodb://localhost:27017/book-task4",
+  url: "mongodb+srv://sinproject251201:subhan321@cluster0.rngsv.mongodb.net/book-task4",
 };
 
 module.exports = dbConfig;

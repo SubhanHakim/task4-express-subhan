@@ -1,6 +1,17 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    User:
+ *      type: object  
+ *      required:
+ *        - name
+ *        - password
+ */
+
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -14,15 +25,6 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-userSchema.pre("save", async function (next) {
-  const user = this;
-  if (!user.isModified("password")) {
-    return next();
-  }
-  user.password = await bcrypt.hash(user.password, 10);
-  next();
-});
 
 userSchema.method("toJSON", function () {
   const { __v, _id, password, ...object } = this.toObject();
