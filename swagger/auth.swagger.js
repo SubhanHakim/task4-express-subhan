@@ -2,8 +2,9 @@
  * @swagger
  * /signin:
  *   post:
- *     summary: Sign in
- *     tags: [Auth]
+ *     tags:
+ *       - Auth
+ *     summary: Login user
  *     requestBody:
  *       required: true
  *       content:
@@ -13,15 +14,15 @@
  *             properties:
  *               name:
  *                 type: string
- *                 example: "subhan"
- *               required: true
+ *                 example: "Syahrul"
+ *                 required: true
  *               password:
  *                 type: string
- *                 example: "123456"
+ *                 example: "123"
  *                 required: true
- *     responses:       
+ *     responses:
  *       200:
- *         description: Success
+ *         description: Login Successful!
  *       404:
- *         description: Login Failed
+ *         description: Login Failed!
  */
